@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  display: flex;
+  padding: 5px 20px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.active {
+  background-color: red;
+  color: black;
+}
