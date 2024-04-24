@@ -16,12 +16,8 @@ const MoviesPage = () => {
       if (!searchFilm) return;
       try {
         setIsLoading(true);
-        const data = await requestSearchFilm(searchFilm);
-        if (data.results.length === 0) {
-          setSearcResult([]);
-        } else {
-          setSearcResult(data.results);
-        }
+        const movies = await requestSearchFilm(searchFilm);
+        setSearcResult(movies);
       } catch (error) {
         setIsError(true);
       } finally {

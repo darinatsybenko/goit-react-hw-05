@@ -8,18 +8,15 @@ axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
 export const trendingFilms = async () => {
   const { data } = await axios.get(`trending/all/day?`);
-  console.log(data.results);
   return data.results;
 };
 
 export const requestSearchFilm = async (query) => {
   const { data } = await axios.get(`search/movie?&query=${query}`);
-  console.log(data.results);
   return data.results;
 };
 
 export const getMovieDetails = async (movieId) => {
   const { data } = await axios.get(`movie/${movieId}`);
-  console.log(data.results);
   return data.results;
 };
