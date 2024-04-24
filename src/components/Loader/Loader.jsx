@@ -1,16 +1,20 @@
-import { Audio } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <Audio
-      height="80"
-      width="80"
-      radius="9"
-      color="green"
-      ariaLabel="loading"
-      wrapperStyle
-      wrapperClass
-    />
+    <div>
+      render(
+      <Oval
+        visible={true}
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="oval-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+      )
+    </div>
   );
 };
 
