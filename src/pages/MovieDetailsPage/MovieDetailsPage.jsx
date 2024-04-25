@@ -37,10 +37,7 @@ const MovieDetailsPage = () => {
               </li>
               <li>
                 <h3>Genres</h3>
-                <p>
-                  {" "}
-                  {movieDetalis.genres.map((genre) => genre.name.join(", "))}
-                </p>
+                <p> {movieDetalis.genres.map((genre) => genre.name)}</p>
               </li>
             </ul>
           </section>
