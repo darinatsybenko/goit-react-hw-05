@@ -3,7 +3,6 @@ import { Oval } from "react-loader-spinner";
 const Loader = () => {
   return (
     <div>
-      render(
       <Oval
         visible={true}
         height="80"
@@ -13,7 +12,6 @@ const Loader = () => {
         wrapperStyle={{}}
         wrapperClass=""
       />
-      )
     </div>
   );
 };
