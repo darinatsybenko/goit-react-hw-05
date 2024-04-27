@@ -1,0 +1,7 @@
+.back {
+  border: 1px solid black;
+}
+
+.movieDetalis {
+  display: flex;
+}

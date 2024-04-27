@@ -17,3 +17,9 @@
   background-color: red;
   color: black;
 }
+
+.header {
+  width: 100%;
+  box-shadow: 5px 5px 5px rgb(204, 145, 145);
+  background-color: rgba(225, 225, 240, 0.85);
+}

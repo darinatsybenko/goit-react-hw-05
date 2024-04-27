@@ -1,0 +1,17 @@
+.SearchBar {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+}
+.submitBtn {
+  background-color: #cf6565;
+  border: 1px solid #090909;
+  width: 80x;
+  height: 21px;
+}
+.form {
+  width: 500px;
+  padding: 8px;
+}

@@ -1,7 +1,6 @@
 import { lazy, useEffect, useState } from "react";
 import { getMovieCast } from "../../Api/Api";
 import { useParams } from "react-router-dom";
-
 const Loader = lazy(() => import("../Loader/Loader"));
 const ErrorMessage = lazy(() => import("../ErrorMessage/ErrorMessage"));
 
@@ -35,6 +34,7 @@ const MovieCast = () => {
             return (
               <li key={actor.id}>
                 <img
+                  width={150}
                   src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                   alt={actor.name}
                 />

@@ -29,7 +29,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Trending today</h1>
+      <h1>Trending today:</h1>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       <MovieList movieItems={movieItems} />

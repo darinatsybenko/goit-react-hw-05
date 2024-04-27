@@ -1,7 +1,7 @@
 import { lazy, useEffect, useState } from "react";
 import { requestSearchFilm } from "../../Api/Api";
 import { useSearchParams } from "react-router-dom";
-
+import css from "./MoviesPage.module.css";
 const Loader = lazy(() => import("../../components/Loader/Loader"));
 const ErrorMessage = lazy(() =>
   import("../../components/ErrorMessage/ErrorMessage")
@@ -40,14 +40,18 @@ const MoviesPage = () => {
     event.preventDefault();
     onSetSearchFilm(event.target.film.value);
   };
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <label>
           <input type="text" name="film" />
         </label>
-        <button type="submit">search film</button>
+        <button className={css.submitBtn} type="submit">
+          search film
+        </button>
       </form>
+
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
 

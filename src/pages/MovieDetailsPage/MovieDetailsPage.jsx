@@ -1,6 +1,7 @@
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { getMovieDetails } from "../../Api/Api";
+import css from "./MovieDetalisPage.module.css";
 
 const MovieCast = lazy(() => import("../../components/MovieCast/MovieCast"));
 const MovieReviews = lazy(() =>
@@ -37,9 +38,12 @@ const MovieDetailsPage = () => {
     <div>
       {movieDetalis !== null && (
         <div>
-          <Link to={backLinkRef.current}>Go back </Link>
-          <section>
+          <Link className={css.back} to={backLinkRef.current}>
+            Go back{" "}
+          </Link>
+          <section className={css.movieDetalis}>
             <img
+              width={200}
               src={`https://image.tmdb.org/t/p/w500${movieDetalis.poster_path}`}
               alt={movieDetalis.title}
             />
@@ -62,12 +66,12 @@ const MovieDetailsPage = () => {
             <h3>Additional information</h3>
             <ul>
               <li>
-                <Link to="cast" state={location}>
+                <Link to="cast" state={{ url: "movie/{ movieId }/credits" }}>
                   Cast
                 </Link>
               </li>
               <li>
-                <Link to="reviews" state={location}>
+                <Link to="reviews" state={{ url: `movie/${movieId}/reviews` }}>
                   Reviews
                 </Link>
               </li>
