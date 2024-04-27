@@ -1,11 +1,15 @@
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
-import MovieCast from "../../components/MovieCast/MovieCast";
-import MovieReviews from "../../components/MovieReviews/MovieReviews";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { getMovieDetails } from "../../Api/Api";
-import Loader from "../../components/Loader/Loader";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
+const MovieCast = lazy(() => import("../../components/MovieCast/MovieCast"));
+const MovieReviews = lazy(() =>
+  import("../../components/MovieReviews/MovieReviews")
+);
+const Loader = lazy(() => import("../../components/Loader/Loader"));
+const ErrorMessage = lazy(() =>
+  import("../../components/ErrorMessage/ErrorMessage")
+);
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieDetalis, setMovieDetalis] = useState(null);
@@ -71,10 +75,12 @@ const MovieDetailsPage = () => {
           </section>
           {isLoading && <Loader />}
           {isError && <ErrorMessage />}
-          <Routes>
-            <Route path="cast" element={<MovieCast />}></Route>
-            <Route path="reviews" element={<MovieReviews />}></Route>
-          </Routes>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="cast" element={<MovieCast />}></Route>
+              <Route path="reviews" element={<MovieReviews />}></Route>
+            </Routes>
+          </Suspense>
         </div>
       )}
     </div>

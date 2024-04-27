@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loader from "../Loader/Loader";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { getMovieReviews } from "../../Api/Api";
 
+const Loader = lazy(() => import("../Loader/Loader"));
+const ErrorMessage = lazy(() => import("../ErrorMessage/ErrorMessage"));
 const MovieReviews = () => {
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

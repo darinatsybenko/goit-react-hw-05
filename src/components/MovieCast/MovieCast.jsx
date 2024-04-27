@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { getMovieCast } from "../../Api/Api";
 import { useParams } from "react-router-dom";
-import Loader from "../Loader/Loader";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+
+const Loader = lazy(() => import("../Loader/Loader"));
+const ErrorMessage = lazy(() => import("../ErrorMessage/ErrorMessage"));
 
 const MovieCast = () => {
   const [cast, setCast] = useState(null);

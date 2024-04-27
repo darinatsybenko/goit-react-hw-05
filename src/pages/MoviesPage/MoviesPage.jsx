@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { requestSearchFilm } from "../../Api/Api";
-import Loader from "../../components/Loader/Loader";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import MovieList from "../../components/MovieList/MovieList";
 import { useSearchParams } from "react-router-dom";
+
+const Loader = lazy(() => import("../../components/Loader/Loader"));
+const ErrorMessage = lazy(() =>
+  import("../../components/ErrorMessage/ErrorMessage")
+);
+const MovieList = lazy(() => import("../../components/MovieList/MovieList"));
 
 const MoviesPage = () => {
   // const [searchFilm, setSearchFilm] = useState("");
