@@ -40,7 +40,6 @@ const MoviesPage = () => {
     event.preventDefault();
     onSetSearchFilm(event.target.film.value);
   };
-
   return (
     <>
       <form className={css.form} onSubmit={handleSubmit}>

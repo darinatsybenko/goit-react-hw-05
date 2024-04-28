@@ -44,7 +44,11 @@ const MovieDetailsPage = () => {
           <section className={css.movieDetalis}>
             <img
               width={200}
-              src={`https://image.tmdb.org/t/p/w500${movieDetalis.poster_path}`}
+              src={
+                movieDetalis.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movieDetalis.poster_path}`
+                  : "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+              }
               alt={movieDetalis.title}
             />
             <ul>
